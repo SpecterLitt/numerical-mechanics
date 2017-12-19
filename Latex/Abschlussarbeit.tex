@@ -1,0 +1,101 @@
+%This ist the master document.
+
+\documentclass[11pt, a4paper]{article}
+% layout: font size 11pt, paper size: DIN A4, style: article
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\author{Räuber Hotzenplotz}	%%%%% change here!! %%%%%
+\date{today}
+\title{Masterarbeit}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\usepackage[T1]{fontenc}
+\renewcommand{\rmdefault}{cmss} 	% font: CMSS (CM Sans).
+ \usepackage{ngerman} 			% german umlaute and hyphenation, as well as german figure captions etc. - comment it for english figure captions etc.
+
+% german umlaute, hyphenation, etc.
+\usepackage[utf8]{inputenc}
+% mac-users can write the following statement instead:
+%\usepackage[applemac]{inputenc}
+\setlength{\parindent}{0em}                       % no indentation at the beginning of a new paragraph
+\setlength{\parskip}{1.5ex plus0.5ex minus 0.5ex} % spacing between paragraphs
+
+% mathematical expressions:
+\usepackage{amsmath}
+\usepackage{amssymb}
+
+\numberwithin{equation}{section}	% enumeration of equations contains the number of the current chapter
+\numberwithin{figure}{section}		% enumeration of figures contains the number of the current chapter
+
+% graphics and tables
+\usepackage{graphicx} 			% include pictures
+\usepackage[hang]{caption2} 		% indented captions for figures (in case of multiple lines)
+\usepackage[hang]{subfigure}		% figures in figures with indented captions
+
+\graphicspath{{./pics/}}		% set path to the folder that contains the pictures
+
+\usepackage{xcolor} 			% colours
+\usepackage{array}			% more options in tables
+\usepackage{booktabs}			% enhance the quality of tables
+
+% literature
+\usepackage{natbib} 			% contains alternatives to the \cite command
+
+\newcommand{\citenamefont}{\textsc}	% references in small caps (does not work with natdin and dinat)
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% embedding matlab code
+\usepackage{listings}
+\usepackage{verbatim}
+\usepackage[framed,numbered,autolinebreaks,useliterate]{mcode}		% option 'framed' for a frame around the code, 'numbered' for line numbering...
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%page layout
+\usepackage{fancyhdr}          % headers and footers
+\pagestyle{fancy}			% page layout
+\lhead{} \rhead{\nouppercase{\leftmark}} \cfoot{\thepage}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% beginning of the document
+\begin{document}
+
+% title page
+\include{./chapters/title}
+
+% Ehrenwörtliche Erklärung
+ \include{./chapters/erklaerung}		% confirmation of authorship
+%\include{./chapters/confirmation}	% confirmation of authorship in ENGLISH 
+% \include{./chapters/aufgabenstellung}	% include the assignment of tasks
+\thispagestyle{empty}
+\include{./chapters/abstract}
+
+% table of contents (automatically)
+\pagenumbering{roman}			% roman pagination for table of contents
+\tableofcontents
+% optional: list of figures
+%\listoffigures
+
+\pagenumbering{arabic}
+\include{./chapters/01_introduction}
+\include{./chapters/02_theory}
+\include{./chapters/03_developed_tasks}
+\include{./chapters/04_implementation}
+\include{./chapters/05_numerical_example}
+\include{./chapters/06_conclusion}
+
+% list of references (automatically)
+
+\thispagestyle{plain}
+% \bibliographystyle{apalike}		% reference: author, (year), title (ENGLISH), alphabetically 
+\bibliographystyle{plain}		% reference: number, author, title, year (ENGLISH),alphabetically 
+ %\bibliographystyle{dinat}		% reference: author in small caps, title, year,(DEUTSCH), alphabetically
+% \bibliographystyle{natdin}		% reference: author in small caps, title, year,(DEUTSCH), alphabetically
+\bibliography{mybib}
+
+\end{document}
+
+
+

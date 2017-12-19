@@ -1,0 +1,98 @@
+\section{Theory}
+\subsection{Figures}
+Figures can be inserted as floating objects. They can be arranged in several different ways, dependent on the size and content of the pictures.\\
+The \LaTeX{} code for Fig. \ref{fig:1} is
+\begin{verbatim}
+\begin{figure}[b]
+\includegraphics[width=\linewidth, height=2cm]{empty}
+\caption{The usual figure environment. It ...}
+\label{fig:1}
+\end{figure}
+\end{verbatim}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}[b]
+\includegraphics[width=\linewidth, height=2cm]{empty}
+\caption{The usual figure environment. It may be used for figures spanning the
+  whole page width.}
+\label{fig:1}
+\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Figures should not be inserted without referring to them in the text. Text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text \dots see figure \ref{fig:2}.
+
+Text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text \dots as indicated in figure \ref{fig:3}.\\
+\dots is plotted in figure \ref{fig:4} and \dots is given in figure \ref{fig:5}.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}%[b]
+  \includegraphics[width=.5\textwidth,height=25mm]{empty}
+\caption{A figure  environment with a caption.
+Figure and caption are leftindented.}
+\label{fig:2}
+\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+Two small pictures can be located side by side, to avoid plenty of free space. An example is given in figures \ref{fig:3} and \ref{fig:4}.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}
+\begin{minipage}{72mm}
+\includegraphics[width=\linewidth,height=25mm]{empty}
+\caption{Two figures side by side with different numbers.}
+\label{fig:3}
+\end{minipage}
+\hfil
+\begin{minipage}{65mm}
+\includegraphics[width=\linewidth,height=25mm]{empty}
+\caption{This is the second picture.}
+\label{fig:4}
+\end{minipage}
+\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+If two pictures belong together, they can be arranged in one \verb+\figure+ environment with a joint caption.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}
+\includegraphics[width=68mm,height=25mm]{empty}~a)
+\hfil
+\includegraphics[width=68mm,height=25mm]{empty}~b)
+\caption{Two figures with one number. The figures are referred to as \textbf{a}
+and \textbf{b}.}
+\label{fig:5}
+\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+It should be made sure that it is not only referred to every picture in the text, but that every picture is also discussed.\\
+x is plotted against y\dots The dotted line, the broken line, the solid line \dots The limb of the curve \dots\\
+The crest, the peak, the trough, rising sharply, \dots
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Test of math environments}
+Equations are always left-aligned. Therefore the option {fleqn} is used for the
+documentclass command by default. Note that {fleqn} does not work with
+unnumbered displayed equations written as \verb+$$ Ax =b $$+, so please use
+\verb+\[ Ax=b \]+ or an \texttt{equation*} or \texttt{gather*} environment
+instead.
+
+By default the equations are consecutively numbered. This may be changed by
+putting the following command inside the preamble
+\begin{center}
+  \verb+\numberwithin{equation}{section}+
+\end{center}
+
+The latex math display environment \verb+\[+\ldots\verb+\]+
+\[
+  \sum_{i=1}^{\infty} \frac{1}{i^2}
+\]
+
+An equation environment:
+\begin{equation}
+  \label{eq:eq}
+  \sum_{i=1}^{\infty} \frac{1}{i^2}
+\end{equation}
+For more mathematical commands and environments please refer to the documentation of the \AmS{} classes. Search the internet, the wikipedia.de \TeX--help or consult the book \cite{sturm2007}.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Literature}
+Insert references to the relevant literature into the text. Futhermore make sure that all content from any external source is marked as such properly. References or citations can be used at the discretion of the author, as long as they are marked properly.\\
+\cite{oden_reddy_2011}\\
+\cite{nackenhorst_2004}\\
+\cite{holzapfel_2000}\\
+\cite{zienkiewicz_taylor_1989}\\
+\cite{ziefle_2008}\\
+\cite{sagar_2010}
